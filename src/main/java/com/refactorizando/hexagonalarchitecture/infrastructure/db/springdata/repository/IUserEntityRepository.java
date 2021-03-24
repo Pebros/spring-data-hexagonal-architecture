@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.refactorizando.hexagonalarchitecture.infrastructure.db.springdata.dbo.UserEntity;
 
 @Repository
-public interface SpringDataUserRepository extends JpaRepository<UserEntity, Long> {
+public interface IUserEntityRepository extends JpaRepository<UserEntity, Long> {
 
 }
