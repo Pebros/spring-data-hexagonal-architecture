@@ -1,4 +1,4 @@
-package com.refactorizando.hexagonalarchitecture.infrastructure.rest.spring.resources;
+package com.refactorizando.hexagonalarchitecture.infrastructure.rest.spring.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-public class Resources {
+public class UserController {
 
   private final UserService userService;
 
