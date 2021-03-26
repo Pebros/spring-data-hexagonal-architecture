@@ -1,5 +1,6 @@
 package com.refactorizando.hexagonalarchitecture.infrastructure.rest.spring.controller;
 
+import com.refactorizando.hexagonalarchitecture.application.exception.AppException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,17 +24,18 @@ public class UserController {
 
   @GetMapping("users/user/{id}")
   public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
-
     return new ResponseEntity<>(userMapper.toDto(userService.getUser(id)), HttpStatus.OK);
-
   }
 
   @PostMapping("users")
   public ResponseEntity<UserDto> saveUser(@RequestBody UserDto userDto) {
-
     return new ResponseEntity<>(userMapper.toDto(userService.saveUser(userMapper.toDomain(userDto))),
         HttpStatus.CREATED);
+  }
 
+  @GetMapping("users/exception")
+  public Boolean getException() throws AppException {
+    return userService.getException();
   }
 
 }

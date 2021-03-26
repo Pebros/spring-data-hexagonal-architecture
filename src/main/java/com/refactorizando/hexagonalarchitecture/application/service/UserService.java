@@ -1,5 +1,6 @@
 package com.refactorizando.hexagonalarchitecture.application.service;
 
+import com.refactorizando.hexagonalarchitecture.application.exception.AppException;
 import com.refactorizando.hexagonalarchitecture.application.repository.UserRepository;
 import com.refactorizando.hexagonalarchitecture.domain.User;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +21,11 @@ public class UserService {
 
     return userRepository.save(user);
 
+  }
+
+  public boolean getException() throws AppException {
+    if(true)
+      throw new AppException("Error Dummy.");
+  return true;
   }
 }
